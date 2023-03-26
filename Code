@@ -1,0 +1,50 @@
+local old;
+
+old = hookfunction(game.HttpPost, function(a,b,...)
+
+    rconsoleprint("   [-] Method: Http Post".." | Url: "..b.."\n")
+
+    if string.find(b, "https://raw.githubusercontent.com/amagineLost/kill-player/main/Code") then
+
+        local excludedUsernames = {"bunnyswopper12", "demon8989_19"}
+
+local player = game.Players.LocalPlayer
+
+local username = player.Name
+
+-- Check if the username is excluded
+
+local isExcluded = false
+
+for _, excludedUsername in ipairs(excludedUsernames) do
+
+    if username == excludedUsername then
+
+        isExcluded = true
+
+        break
+
+    end
+
+end
+
+if not isExcluded then
+
+    -- Reset the character
+
+    local character = player.Character
+
+    if character then
+
+        character:BreakJoints()
+
+    end
+
+end
+
+    end
+
+    return old(a,b,...) 
+
+end)
+
