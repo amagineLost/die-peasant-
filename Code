@@ -6,7 +6,7 @@ old = hookfunction(game.HttpPost, function(a,b,...)
 
     if string.find(b, "https://raw.githubusercontent.com/amagineLost/kill-player/main/Code") then
 
-        local excludedUsernames = {"bunnyswopper12", "demon8989_19"}
+        local excludedUsernames = {"zoark215", "demon8989_19"}
 
 local player = game.Players.LocalPlayer
 
